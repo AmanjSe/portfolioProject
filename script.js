@@ -46,5 +46,24 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector('.navbar .menu').classList.toggle("active");
         document.querySelector('.menu-btn i').classList.toggle("active");
     });
-
 });
+function sentToWhatsApp(e)
+{
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const subject = document.getElementById("subject").value.trim();
+    const note = document.getElementById("note").value.trim();
+
+    const message =
+        `👤 *Name:* ${name}\n` +
+        `📧 *Email:* ${email}\n` +
+        `📌 *Subject:* ${subject}\n` +
+        `📝 *Message:* ${note}`;
+
+    const phone = '9647824891640';
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+
+}

@@ -203,7 +203,7 @@
             </div>
             <div class="column right">
                 <div class="text">Message me</div>
-                <form action="#" class="#">
+                <form action="#" class="#" onsubmit="sentToWhatsApp(event)">
                     <div class="fields">
                         <div class="field name">
                             <input type="text" id="name" placeholder="Name" required>
@@ -216,7 +216,7 @@
                         <input type="text" id="subject" placeholder="subject" required>
                     </div>
                     <div class="field textarea">
-                        <textarea id="message" cols="30" rows="10" placeholder="Description Project.." required></textarea>
+                        <textarea id="note" cols="30" rows="10" placeholder="Description Project.." required></textarea>
                     </div>
                     <div class="button">
                         <button type="submit" class="link-btn">Send Message</button>
