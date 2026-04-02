@@ -56,6 +56,18 @@ function sentToWhatsApp(e)
     const subject = document.getElementById("subject").value.trim();
     const note = document.getElementById("note").value.trim();
 
+    emailjs.send('service_jiv3x5a', 'template_u2p14mg', {
+        name: name,
+        email: email,
+        subject: subject,
+        message: note
+    }).then( () => {
+        alert('Message sent to your gmail account');
+    }).catch((error) => {
+        alert('failed to sent ~ Try again');
+        console.error(error);
+    })
+
     const message =
         `👤 *Name:* ${name}\n` +
         `📧 *Email:* ${email}\n` +
