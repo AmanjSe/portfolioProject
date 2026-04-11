@@ -33,49 +33,64 @@ document.addEventListener("DOMContentLoaded", function () {
         backSpeed: 65,
         loop: true
     });
-
-    var typed2 = new Typed(".typing-2", {
-        strings: ["Software Engineer", "Reader", "Traveler"],
-        typeSpeed: 100,
-        backSpeed: 65,
-        loop: true
-    });
-
     // Menu toggle
     document.querySelector('.menu-btn').addEventListener("click", function () {
         document.querySelector('.navbar .menu').classList.toggle("active");
         document.querySelector('.menu-btn i').classList.toggle("active");
     });
 });
-function sentToWhatsApp(e)
+function sendEmail(name, email, subject, note)
 {
-    e.preventDefault();
-
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const subject = document.getElementById("subject").value.trim();
-    const note = document.getElementById("note").value.trim();
-
-    emailjs.send('service_jiv3x5a', 'template_u2p14mg', {
+    return emailjs.send('service_jiv3x5a', 'template_u2p14mg', {
         name: name,
         email: email,
         subject: subject,
         message: note
-    }).then( () => {
+    });
+}
+function getFormData(){
+    return{
+         name : document.getElementById("name").value.trim(),
+         email : document.getElementById("email").value.trim(),
+         subject : document.getElementById("subject").value.trim(),
+         note : document.getElementById("note").value.trim()
+    }
+}
+function buildWhatsappMessage(data)
+{
+    return (
+        `👤 *Name:* ${data.name}\n` +
+        `📧 *Email:* ${data.email}\n` +
+        `📌 *Subject:* ${data.subject}\n` +
+        `📝 *Message:* ${data.note}`
+    );
+}
+function openWhatsapp(message)
+{
+    const phone = '9647824891640';
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+}
+function emailValidation(email)
+{
+    const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return pattern.test(email);
+}
+function sentToWhatsApp(e)
+{
+    e.preventDefault();
+    const data = getFormData();
+    if(!emailValidation(data.email))
+    {
+        alert("Please enter a valid email ex: test@gmail.com")
+        return;
+    }
+    sendEmail(data.name, data.email,data.subject,data.message).then( () => {
         alert('Message sent to your gmail account');
+        const message = buildWhatsappMessage(data);
+        openWhatsapp(message);
     }).catch((error) => {
         alert('failed to sent ~ Try again');
         console.error(error);
     })
-
-    const message =
-        `👤 *Name:* ${name}\n` +
-        `📧 *Email:* ${email}\n` +
-        `📌 *Subject:* ${subject}\n` +
-        `📝 *Message:* ${note}`;
-
-    const phone = '9647824891640';
-    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-    window.open(url, '_blank');
-
 }
