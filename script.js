@@ -85,7 +85,7 @@ function sentToWhatsApp(e)
         alert("Please enter a valid email ex: test@gmail.com")
         return;
     }
-    sendEmail(data.name, data.email,data.subject,data.message).then( () => {
+    sendEmail(data.name, data.email,data.subject,data.note).then( () => {
         alert('Message sent to your gmail account');
         const message = buildWhatsappMessage(data);
         openWhatsapp(message);
