@@ -34,9 +34,15 @@ document.addEventListener("DOMContentLoaded", function () {
         loop: true
     });
     // Menu toggle
-    document.querySelector('.menu-btn').addEventListener("click", function () {
+    document.querySelector('div.menu-btn').addEventListener("click", function () {
         document.querySelector('.navbar .menu').classList.toggle("active");
         document.querySelector('.menu-btn i').classList.toggle("active");
+    });
+    document.querySelectorAll('.navbar .menu li a').forEach(function(link) {
+        link.addEventListener("click", function() {
+            document.querySelector('.navbar .menu').classList.remove("active");
+            document.querySelector('.menu-btn i').classList.remove("active");
+        });
     });
 });
 function sendEmail(name, email, subject, note)
