@@ -1,0 +1,60 @@
+/* footer section styling */
+footer {
+    background: var(--primary-color);
+    padding: 20px 25px;
+    color: var(--bg-color);
+    text-align: left;
+}
+
+footer span a {
+    color: #9DB2BF;
+    text-decoration: none;
+}
+
+footer span a:hover {
+    text-decoration: underline;
+}
+
+.site-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: var(--primary-color);
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    padding-right: 40px;
+}
+
+.social-icons a {
+    color: var(--bg-color);
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.social-icons .linkedIn:hover {
+    color: #0077b5;
+    text-shadow: 0 0 15px rgba(0, 119, 181, 0.7);
+    transform: translateY(-3px);
+}
+
+.social-icons .Instagram:hover {
+    color: #e1306c;
+    text-shadow: 0 0 12px rgba(225, 48, 108, 0.7);
+    transform: translateY(-3px);
+}
+
+.social-icons .whatsapp:hover {
+    color: #25d366;
+    text-shadow: 0 0 15px rgba(37, 211, 102, 0.7);
+    transform: translateY(-3px);
+}

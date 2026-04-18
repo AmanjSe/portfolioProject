@@ -1,0 +1,63 @@
+/* navbar styling */
+.navbar {
+    position: fixed;
+    padding: 25px;
+    width: 100%;
+    font-family: 'Ubuntu', sans-serif;
+    transition: all 0.7s ease;
+    z-index: 9999;
+    background: var(--primary-color);
+}
+
+.navbar.sticky {
+    padding: 12px;
+    background: var(--primary-color);
+}
+
+.navbar .max-width {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1900px;
+}
+
+.navbar .logo a {
+    font-size: 46px;
+    font-weight: 600;
+    color: var(--bg-color);
+    transition: all 0.7s ease;
+}
+
+.navbar .menu li {
+    list-style: none;
+    display: inline-block;
+}
+
+.navbar .menu li a {
+    display: block;
+    color: var(--bg-color);
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+    transition: color 0.3s ease-out;
+}
+
+.navbar.sticky .logo a span {
+    color: var(--bg-color);
+}
+
+.navbar .menu li a:hover {
+    color: #9DB2BF;
+}
+
+.navbar.sticky .menu li a:hover {
+    color: #9DB2BF;
+}
+
+/* menu btn styling */
+.menu-btn {
+    color: var(--bg-color);
+    font-size: 25px;
+    cursor: pointer;
+    display: none;
+}

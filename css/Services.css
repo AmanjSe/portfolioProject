@@ -1,0 +1,59 @@
+/* services section styling */
+.services {
+    color: var(--bg-color);
+    background: var(--bg-color);
+}
+
+.services .title::before {
+    background: var(--primary-color);
+}
+
+.services .title::after {
+    background: var(--bg-color);
+    color: var(--primary-color);
+    content: "what i provide";
+}
+
+.services h2 {
+    color: var(--primary-color);
+}
+
+.services .services-content .card {
+    width: calc(33% - 20px);
+    background: var(--primary-color);
+    text-align: center;
+    border-radius: 10px;
+    padding: 20px 25px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    max-width: 1300px;
+}
+
+.services .services-content .card:hover {
+    background: rgb(157, 178, 191);
+    color: #000;
+}
+
+.services .services-content .card .box {
+    transition: all 0.3s ease-in-out;
+}
+
+.services .services-content .card:hover .box {
+    transform: scale(1.08);
+}
+
+.services .services-content .card i {
+    font-size: 50px;
+    color: var(--bg-color);
+    transition: color 0.3s ease-in-out;
+}
+
+.services .services-content .card:hover i {
+    color: #000;
+}
+
+.services .services-content .card .text {
+    font-size: 25px;
+    font-weight: 550;
+    margin: 10px 0 7px 0;
+}

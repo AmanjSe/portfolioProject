@@ -1,0 +1,78 @@
+/* skills section styling */
+.skills {
+    background: #9DB2BF;
+}
+
+.skills .title::after {
+    content: "What I know";
+    background: #9DB2BF;
+}
+
+.skills .skills-content .column {
+    width: calc(50% - 30px);
+}
+
+.skills .skills-content .left .text {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.skills .skills-content .left p {
+    text-align: left;
+}
+
+.skills .skills-content .left a {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--bg-color);
+    font-size: 15px;
+    font-weight: 600;
+    padding: 11px 15px;
+    margin-top: 25px;
+    border-radius: 9px;
+    border: 3px solid var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.skills .skills-content .left a:hover {
+    color: var(--primary-color);
+    background: none;
+}
+
+.skills .skills-content .right .bars {
+    margin-bottom: 25px;
+}
+
+.skills .skills-content .right .info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 7px;
+}
+
+.skills .skills-content .right span {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.skills .skills-content .right .line {
+    height: 5px;
+    width: 100%;
+    background: #fff;
+    position: relative;
+}
+
+.skills .skills-content .right .line::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: var(--primary-color);
+}
+
+.skills-content .right .html::before { width: 70%; }
+.skills-content .right .css::before  { width: 40%; }
+.skills-content .right .java::before { width: 60%; }
+.skills-content .right .php::before  { width: 45%; }
